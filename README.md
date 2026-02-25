@@ -86,6 +86,20 @@ src/
 
 ---
 
+## 📸 Screenshots
+
+### Wallet Connected
+![Wallet Connected](screenshots/connected.png)
+
+### Balance Displayed
+![Balance](screenshots/balance.png)
+
+### Successful Transaction
+![Transaction](screenshots/transaction.png)
+
+### Transaction Result
+![Result](screenshots/result.png)
+
 ##  Key Implementation Details
 
 **Wallet Connection** — Uses `@stellar/freighter-api` to request access and retrieve the user's public key.
