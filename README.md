@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+#  Stellar Nexus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean and minimal Stellar testnet wallet dApp built with React and Freighter. Connect your wallet, check your XLM balance, and send transactions — all on the Stellar testnet.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Live Demo
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://stellar-nexus-lake.vercel.app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Features
 
-### `npm run build`
+-  Connect / Disconnect Freighter wallet
+-  Display real-time XLM balance
+-  Send XLM transactions on Stellar testnet
+-  Transaction success feedback with hash
+-  Error handling for failed transactions
+-  Testnet network verification
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React** — Frontend UI
+- **@stellar/stellar-sdk** — Stellar transaction building & submission
+- **@stellar/freighter-api** — Wallet connection & transaction signing
+- **Stellar Horizon API** — Testnet account & balance fetching
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##  Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/stellar-nexus.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Navigate into the project
+cd stellar-nexus
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start the development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Setup & Usage
 
-### Code Splitting
+### 1. Install Freighter Wallet
+Download the [Freighter browser extension](https://www.freighter.app/) and create or import a wallet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. Switch to Testnet
+In Freighter settings, switch the network to **Testnet**.
 
-### Analyzing the Bundle Size
+### 3. Fund Your Wallet
+Get free testnet XLM from the Stellar Friendbot:
+```
+https://friendbot.stellar.org?addr=YOUR_PUBLIC_KEY
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Connect & Transact
+- Click **Connect Freighter** to link your wallet
+- Your XLM balance will display automatically
+- Enter a destination address and amount to send XLM
+- Approve the transaction in Freighter
+- View your transaction hash on success
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##  Project Structure
 
-### Advanced Configuration
+```
+src/
+├── App.js              # Main application component
+├── wallet.js           # Freighter wallet connect/disconnect logic
+├── stellar.js          # Balance fetching via Horizon API
+├── transaction.js      # XLM transaction building & signing
+└── index.css           # Global styles
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+##  Key Implementation Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Wallet Connection** — Uses `@stellar/freighter-api` to request access and retrieve the user's public key.
 
-### `npm run build` fails to minify
+**Balance Fetching** — Queries the Stellar Horizon testnet API to get the native XLM balance for the connected account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Transaction Flow** — Builds a payment operation using `TransactionBuilder`, signs it via Freighter, and submits it to the Horizon testnet.
+
+**Error Handling** — Handles unfunded accounts, invalid inputs, network mismatches, and failed transactions gracefully.
+
+---
+
+##  Important Notes
+
+- This app runs on **Stellar Testnet only** — no real funds are used
+- You must have the **Freighter extension** installed to use this app
+- New wallets must be funded via Friendbot before they appear on-chain
+
+---
+
+##  Stellar White Belt — Level 1
+
+This project was built as part of the **Stellar Developer White Belt** program covering:
+- Wallet setup and integration
+- Balance fetching and display
+- Sending XLM transactions on testnet
+- Error handling and user feedback
+
+---
+
+##  License
+
+MIT License — free to use and modify.
+
+---
+
+Built with ❤️ on Stellar Testnet
