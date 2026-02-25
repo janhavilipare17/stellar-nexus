@@ -19,7 +19,7 @@ export const sendXLM = async (sourcePublicKey, destination, amount) => {
         amount: amount.toString(),
       })
     )
-    .setTimeout(30)
+    .setTimeout(180)
     .build();
 
   
