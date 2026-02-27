@@ -23,7 +23,7 @@ https://stellar-nexus-lake.vercel.app
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **React** — Frontend UI
 - **@stellar/stellar-sdk** — Stellar transaction building & submission
