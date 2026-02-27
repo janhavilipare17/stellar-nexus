@@ -86,7 +86,7 @@ src/
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Wallet Connected
 ![Wallet Connected](screenshots/connected.png)
@@ -136,4 +136,3 @@ MIT License — free to use and modify.
 
 ---
 
-Built with ❤️ on Stellar Testnet
